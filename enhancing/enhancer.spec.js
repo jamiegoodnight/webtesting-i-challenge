@@ -21,6 +21,15 @@ const fireSword = {
 
 const rustySword = {
   name: "Rusty Sword",
-  durability: 5,
+  durability: 23,
   enhancement: 16
 };
+
+// REPAIR
+
+it("should return the item's durability equal to 100", () => {
+  expect(repair(magicSword)).toEqual({ ...magicSword, durability: 100 });
+  expect(repair(fireSword)).toEqual({ ...fireSword, durability: 100 });
+});
+
+// SUCCEED
