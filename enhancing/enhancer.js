@@ -17,9 +17,14 @@ module.exports = {
 };
 
 function succeed(item) {
-  const newItem =
-    item.enhancement === 20 ? item.enhancement : item.enhancement++;
-  return { ...newItem };
+  if (item.enhancement === 20) {
+    return { ...item };
+  } else {
+    return {
+      ...item,
+      enhancement: item.enhancement + 1
+    };
+  }
 }
 
 function fail(item) {

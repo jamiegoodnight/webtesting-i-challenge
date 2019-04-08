@@ -33,3 +33,7 @@ it("should return the item's durability equal to 100", () => {
 });
 
 // SUCCEED
+it("should return the item's enhancement +1, or, if it's already at 20, return it as 20", () => {
+  expect(succeed(magicSword)).toEqual({ ...magicSword, enhancement: 7 });
+  expect(succeed(fireSword)).toEqual({ ...fireSword, enhancement: 20 });
+});
