@@ -29,15 +29,24 @@ function succeed(item) {
 
 function fail(item) {
   if (item.enhancement < 15) {
-    item.durability - 5;
+    return {
+      ...item,
+      durability: item.durability - 5
+    };
   } else {
     if (item.enhancement === 15) {
-      item.durability - 10;
+      return {
+        ...item,
+        durability: item.durability - 10
+      };
     } else {
-      item.durability - 10 && item.enhancement - 1;
+      return {
+        ...item,
+        durability: item.durability - 10,
+        enhancement: item.enhancement - 1
+      };
     }
   }
-  return { ...item };
 }
 
 function repair(item) {
